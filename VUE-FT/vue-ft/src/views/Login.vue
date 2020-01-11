@@ -42,7 +42,8 @@ export default {
                     var obj={uname:$uname,upwd:$upwd};
                     this.axios.get(url,{params:obj}).then(result=>{
                         if(result.data.code==1){
-                            this.$router.push('/')
+                            this.$router.push('/');
+                            location.reload();
                         }else{
                             alert("用户名或密码错误")
                         }

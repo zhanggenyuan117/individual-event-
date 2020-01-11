@@ -314,7 +314,6 @@
                 <div>
                   <ul class="ul190" style="float:left;margin-left:10px;line-height:30px;_margin-left:5px;margin-right:10px;">
                       <li style="display:block;float:left;font-weight:bold;color:#000;clear:both;width:170px;font-size:14px;height:25px;line-height:25px;border-bottom:1px #999 dotted;">售前</li>
-                      
                       <li style="float:left;margin-left:10px;">布布</li>
                       <li style="float:left;margin-left:5px;padding-top:1px;"><a target="_blank" href="http://www.taobao.com/webww/ww.php?ver=3&amp;touid=gkg%E5%AE%B6%E5%85%B7%E6%97%97%E8%88%B0%E5%BA%97&amp;siteid=cntaobao&amp;status=2&amp;charset=utf-8&amp;itemId=568096950295&amp;fromid=cntaobao"><img border="0" src="//amos.alicdn.com/online.aw?v=2&amp;uid=gkg%E5%AE%B6%E5%85%B7%E6%97%97%E8%88%B0%E5%BA%97&amp;site=cntaobao&amp;s=2&amp;charset=utf-8" alt="请点击直接访问" class="img-ks-lazyload"></a></li>
                       <li style="float:left;margin-left:10px;">糖糖</li>
