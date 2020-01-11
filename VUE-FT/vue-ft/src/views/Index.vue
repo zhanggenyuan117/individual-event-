@@ -1590,7 +1590,6 @@ export default {
         window.onscroll = function() {
           scrollTop =
             document.body.scrollTop || document.documentElement.scrollTop;
-          console.log(scrollTop);
           if (scrollTop > 200) {
             sUl.style.display = "block";
           } else {
