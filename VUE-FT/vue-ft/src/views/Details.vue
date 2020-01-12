@@ -351,7 +351,117 @@
           </div>
         </div>
       </div>
-      <div class="details_end_middle"></div>
+      <div class="details_end_middle">
+        <div>
+          <div>
+            <el-tabs type="border-card">
+              <el-tab-pane label="商品详情">
+                <div class="details-card">
+                  <!-- 1 -->
+                  <div>
+                    <div><p>品牌名称:GKG</p></div>
+                    <p>产品参数</p>
+                    <ul>
+                      <li v-for="(p,i) of details_card_li" :key="i">{{p}}</li>
+                    </ul>
+                  </div>
+                  <!-- 2 -->
+                  <div>
+                    <img :src=details_card_tianmao alt="">
+                  </div>
+                  <!-- 3 -->
+                  <div>
+                    <div>
+                      <table></table>
+                      <i></i>
+                      <div>
+                        <span>送货入户</span>
+                        <p>1.消费者在购买带“送货入户”或“送货入户并安装”服务的商品时，商家承诺提供送货入户的服务。</p>
+                        <p>2.如果商家未履行服务承诺，需向消费者赔付30000个天猫积分。 </p>
+                      </div>
+                    </div>
+                    <div>
+                      <table></table>
+                      <i></i>
+                      <div>
+                        <span>三年质保</span>
+                        <p>1.消费者在购买带“三年质保”服务的商品时，商家承诺三年内对该商品提供维修、补寄零配件或更换全新商品的服务。</p>
+                        <p>2.如果商家未履行承诺，需以发放天猫积分的方式向消费者进行赔付，发放天猫积分数量（个）=商品实际成交金额（元）*15（个/元）（最高不超过100000个积分）。 </p>
+                      </div>
+                    </div>
+                    <router-link to="">查看更多服务详情></router-link>
+                  </div>
+                  <!-- 4 -->
+                  <div>
+                    <div>
+                      <ul>
+                        <li v-for="(p,i) of details_card_div_4" :key="i">
+                          <img :src="p.url" style="width:790px;">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </el-tab-pane>
+              <el-tab-pane label="累计评价">配置管理</el-tab-pane>
+              <el-tab-pane label="家装服务详情">
+                <div class="details-service">
+                  <!-- 1 -->
+                  <div>
+                    <div>
+                      <table></table>
+                      <i></i>
+                      <div>
+                        <span>送货入户</span>
+                        <em>服务介绍</em>
+                        <p>送货入户服务，指消费者在天猫平台上购买家装大件类商品时，商家承诺对于其店铺内含有“送货入户”或“送货入户并安装”的商品，如消费者购买该商品时填写的详细收货地址（以下统称“收货地址”）在商家承诺提供“送货入户”或“送货入户并安装”的区域内，则向消费者提供送货到消费者收货地址（包括但不限于长途干线运输、同城配送、搬楼）的特殊服务</p>
+                        <em>消费者保障</em>
+                        <p>商家未提供送货入户服务的，需向消费者赔付30000个天猫积分</p>
+                      </div>
+                    </div>
+                    <div>
+                      <table></table>
+                      <i></i>
+                      <div>
+                        <span>三年质保</span>
+                        <em>服务介绍</em>
+                        <p>三年质保服务，是指商家承诺当消费者购买其店铺内含有“三年质保”服务的商品后，若该商品在指定三年内出现质量问题，则商家将根据商品的实际故障情况，在规定时间内向消费者提供维修或补寄零配件或更换全新商品，以确保消费者可再正常使用该商品的附加服务，或向消费者补偿一定质保基金的附加服务。服务费用由商家与消费者协商确定，且须达成一致</p>
+                        <em>消费者保障</em>
+                        <p>商家应提供但未提供和/或未在规定时间内提供三年质保服务的，需以发放天猫积分的方式向消费者进行赔付，发放天猫积分数量（个）=商品实际成交金额（元）*15（个/元）（最高不超过100000个积分）</p>
+                      </div>
+                    </div>
+                    <router-link to="">查看更多服务详情></router-link>
+                  </div>
+                  <!-- 2 -->
+                  <div>
+                    <ul>
+                      <li v-for="(p,i) of side_img_arr" :key="i">
+                        <img :src="p.url" style="width:220px;height:220px;">
+                        <div>{{p.price.toFixed(2)}}</div>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- 3 -->
+                  <div>
+                    <dl>
+                      <dt>安全提示:</dt>
+                      <dd>
+                        <p>请勿随意接收任何来源不明的文件，请勿随意点击任何来源不明的链接。涉及资金往来的事项请务必仔细核对资金往来信息。 天猫不会以订单有问题，让您提供任何银行卡、密码、手机验证码！遇到可疑情况可在钱盾“诈骗举报”中进行举报</p>
+                      </dd>
+                    </dl>
+                    <dl>
+                      <dt>内容声明:</dt>
+                      <dd>
+                        <p>天猫为第三方交易平台及互联网信息服务提供者，天猫（含网站、客户端等）所展示的商品/服务的标题、价格、详情等信息内容系由店铺经营者发布，其真实性、准确性和合法性均由店铺经营者负责。天猫提醒用户购买商品/服务前注意谨慎核实。如用户对商品/服务的标题、价格、详情等任何信息有任何疑问的，请在购买前通过阿里旺旺与店铺经营者沟通确认；天猫存在海量店铺，如用户发现店铺内有任何违法/侵权信息，请立即向天猫举报并提供有效线索。</p>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </el-tab-pane>
+            </el-tabs>
+          </div>
+        </div>
+      </div>
       <div class="details_end_right">
         <div>
           <p>--天天懂你,猜我喜欢--</p>
@@ -371,6 +481,73 @@
 export default {
   data() {
     return {
+      details_card_div_4:[
+        {url:require("../assets/details/detail_img/one.jpg")},
+        {url:require("../assets/details/detail_img/A1.jpg")},
+        {url:require("../assets/details/detail_img/A3.jpg")},
+        {url:require("../assets/details/detail_img/A4.jpg")},
+        {url:require("../assets/details/detail_img/A5.jpg")},
+        {url:require("../assets/details/detail_img/A6.jpg")},
+        {url:require("../assets/details/detail_img/A7.jpg")},
+        {url:require("../assets/details/detail_img/A8.jpg")},
+        {url:require("../assets/details/detail_img/A9.jpg")},
+        {url:require("../assets/details/detail_img/B0.jpg")},
+        {url:require("../assets/details/detail_img/B1.jpg")},
+        {url:require("../assets/details/detail_img/B2.jpg")},
+        {url:require("../assets/details/detail_img/B3.jpg")},
+        {url:require("../assets/details/detail_img/B5.jpg")},
+        {url:require("../assets/details/detail_img/B6.jpg")},
+        {url:require("../assets/details/detail_img/B7.jpg")},
+        {url:require("../assets/details/detail_img/B8.jpg")},
+        {url:require("../assets/details/detail_img/B9.jpg")},
+        {url:require("../assets/details/detail_img/C0.jpg")},
+        {url:require("../assets/details/detail_img/C2.jpg")},
+        {url:require("../assets/details/detail_img/C3.jpg")},
+        {url:require("../assets/details/detail_img/C4.jpg")},
+        {url:require("../assets/details/detail_img/C5.jpg")},
+        {url:require("../assets/details/detail_img/C6.jpg")},
+        {url:require("../assets/details/detail_img/C7.jpg")},
+        {url:require("../assets/details/detail_img/C8.jpg")},
+        {url:require("../assets/details/detail_img/C9.jpg")},
+        {url:require("../assets/details/detail_img/D0.jpg")},
+        {url:require("../assets/details/detail_img/D1.jpg")},
+        {url:require("../assets/details/detail_img/D2.jpg")},
+        {url:require("../assets/details/detail_img/D3.jpg")},
+        {url:require("../assets/details/detail_img/D4.jpg")},
+        {url:require("../assets/details/detail_img/D5.jpg")},
+        {url:require("../assets/details/detail_img/D6.jpg")},
+        {url:require("../assets/details/detail_img/D7.jpg")},
+        {url:require("../assets/details/detail_img/D8.jpg")},
+        {url:require("../assets/details/detail_img/D9.jpg")},
+        {url:require("../assets/details/detail_img/E0.jpg")},
+        {url:require("../assets/details/detail_img/E1.jpg")},
+        {url:require("../assets/details/detail_img/E2.jpg")},
+        {url:require("../assets/details/detail_img/E3.jpg")},
+        {url:require("../assets/details/detail_img/E4.jpg")},
+        {url:require("../assets/details/detail_img/E5.jpg")},
+        {url:require("../assets/details/detail_img/E6.jpg")},
+        {url:require("../assets/details/detail_img/E8.jpg")},
+        {url:require("../assets/details/detail_img/E9.jpg")},
+        {url:require("../assets/details/detail_img/F0.jpg")},
+        {url:require("../assets/details/detail_img/F1.jpg")},
+        {url:require("../assets/details/detail_img/F2.jpg")},
+        {url:require("../assets/details/detail_img/F3.jpg")},
+        {url:require("../assets/details/detail_img/F4.jpg")},
+        {url:require("../assets/details/detail_img/F5.jpg")},
+        {url:require("../assets/details/detail_img/F6.jpg")},
+        {url:require("../assets/details/detail_img/F8.jpg")},
+        {url:require("../assets/details/detail_img/F9.jpg")},
+        {url:require("../assets/details/detail_img/G1.jpg")},
+        {url:require("../assets/details/detail_img/G3.jpg")},
+        {url:require("../assets/details/detail_img/G5.jpg")},
+        {url:require("../assets/details/detail_img/G7.jpg")},
+        {url:require("../assets/details/detail_img/G9.jpg")},
+        {url:require("../assets/details/detail_img/jiageshuoming.png")}
+      ],
+      details_card_tianmao:require("../assets/details/detail_img/tianmao.png"),
+      details_card_li:[
+        "品牌: GKG","型号: 1011#","材质: 木","木质材质: 松木","面料: 麻","图案: 艺术","风格: 简约现代","几人坐: 【海绵款】(普通面料)选1-15号色","颜色分类: 二件套(送4小凳子) 三件套(送...","毛重: 150","填充物: 海绵","结构工艺: 木质工艺","木质结构工艺: 拼板","是否可定制: 是","沙发组合形式: U形","是否可拆洗: 是","附加功能: 移动","适用对象: 成人","是否带储物空间: 是","面料饰面工艺: 植绒","可送货/安装: 其他 南昌市 哈尔滨市 大连","产地: 河南省","地市: 安阳市","区县: 滑县","是否组装: 整装","包装体积: 3","是否可预售: 是","出租车是否可运输: 否","填充物硬度: 软","设计元素: 大师设计","款式定位: 经济型","安装说明详情: 提供安装说明书"
+      ],
       setMealSecondDiv_ul_3:[
         { url: require("../assets/details/small_img/3.jpg"), price: 3577 },
         { url: require("../assets/details/small_img/3.jpg"), price: 3125 },
@@ -389,7 +566,7 @@ export default {
         { url: require("../assets/details/small_img/1.jpg"), price: 12300 },
         { url: require("../assets/details/small_img/1.jpg"), price: 8599 }
       ],
-      activeName: 'second',
+      activeName: 'first',
       small_img_i: 0,
       side_img_arr: [
         { url: require("../assets/details/small_img/1.jpg"), price: 3500 },
@@ -1108,7 +1285,6 @@ export default {
 /* 详情最后 details_end */
 #detailsAll #details_end{
   width: 1190px;
-  height: 9207px;
   margin:20px auto;
   display: flex;
   justify-content: space-between;
@@ -1116,7 +1292,6 @@ export default {
 /* 详情最后 details_end  左侧div*/
 #detailsAll #details_end .details_end_left{
   width: 190px;
-  height: 9207px;
 }
 #detailsAll #details_end .details_end_left .details_end_left_one{
   width: 190px;
@@ -1205,7 +1380,6 @@ export default {
 
 #detailsAll #details_end .details_end_left .details_end_left_two{
   width: 190px;
-  height: 9006px;
 }
 #detailsAll #details_end .details_end_left .details_end_left_two>div:first-child{
   width: 190px;
@@ -1309,16 +1483,10 @@ export default {
 #detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(4)>div>a:nth-of-type(2){
   background: url(//gdp.alicdn.com/imgextra/i4/3417036972/O1CN01qGsbPq21NDvohQbDi_!!3417036972.jpg) 50% 50% no-repeat;
 }
-/* 详情最后 details_end  中间div*/
-#detailsAll #details_end .details_end_middle{
-  width: 790px;
-  height: 5000px;
-  background-color: yellow;
-}
 /* 详情最后 details_end  右侧div*/
 #detailsAll #details_end .details_end_right{
   width: 200px;
-  height: 5000px;
+  height: 1980px;
 }
 #detailsAll #details_end .details_end_right>div{
   width:200px;
@@ -1348,13 +1516,258 @@ export default {
     left: 0;
     bottom: 20px;
 }
+/* 详情最后 details_end  中间div*/
+#detailsAll #details_end .details_end_middle{
+  width: 790px;
+}
+/* details_end_middle   中间div  */
+#detailsAll #details_end .details_end_middle>div{
+  width: 790px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card{
+  width: 790px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:first-child{
+  width: 788px;
+  height: 419px;
+  padding: 8px 20px 10px;
+  border-bottom:1px solid #e6e6e6; 
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>div:first-child{
+    height: 40px;
+    line-height: 40px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>div:first-child>p{
+  margin-bottom: 0;
+  color: #333333;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>p{
+  color: #999999;
+  padding: 5px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>ul{
+  width: 748px;
+  height: 308px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>ul>li{
+    display: inline-block;
+    width: 220px;
+    height: 18px;
+    overflow: hidden;
+    margin: 10px 15px 0 0;
+    line-height: 18px;
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #666;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>div:first-child>p,#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>p,#detailsAll #details_end .details_end_middle>div .details-card>div:first-child>ul>li{
+  font-size: 12px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(2){
+  margin: 8px 0;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3){
+  width: 790px;
+  height: 276px;
+  background-color: #F6F6F6;
+  padding: 0 0 20px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:first-child{
+    width: 770px;
+    height: 90px;
+    padding-left: 20px;
+    margin-top: 10px;
+    display: flex;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:first-child div,#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:nth-child(2) div{
+    width: 658px;
+    height: 90px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 15px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:nth-child(2) div{
+    height: 111px;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:first-child i,#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:nth-child(2) i{
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background-image:url("../assets/details/color/ruhu.png");
+    margin: 20px 16px 0 0;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:nth-child(2) i{
+  background-image:url("../assets/details/color/zhibao.png");
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:nth-child(2){
+    width: 770px;
+    height: 110px;
+    padding-left: 20px;
+    margin-top: 10px;
+    display:flex;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>a{
+    display: block;
+    width: 135px;
+    height: 35px;
+    line-height: 35px;
+    overflow: hidden;
+    margin: 20px auto 0;
+    text-align: center;
+    background-color: #c40000;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #FFF
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:first-child div span,#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:nth-child(2) div span{
+    display: block;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #000;
+}
+#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:first-child div p,#detailsAll #details_end .details_end_middle>div .details-card>div:nth-child(3)>div:nth-child(2) div p{
+    display: block;
+    line-height: 21px;
+    font-family: "microsoft yahei";
+    font-size: 12px;
+    color: #666;
+}
+/* .details-service  1 */
+#detailsAll #details_end .details_end_middle>div .details-service{
+  width: 790px;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child{
+  width: 790px;
+  height: 524px;
+  background-color: #F6F6F6;
+  padding: 1px 0 20px;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:first-child{
+    width: 790px;
+    height: 213px;
+    padding-left: 15px;
+    margin-top: 10px;
+    display: flex;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:first-child div,#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:nth-child(2) div{
+    width: 658px;
+    height: 213px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 15px;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:nth-child(2) div{
+    height: 216px;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:first-child i,#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:nth-child(2) i{
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background-image:url("../assets/details/color/ruhu.png");
+    margin: 20px 16px 0 0;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:nth-child(2) i{
+  background-image:url("../assets/details/color/zhibao.png");
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:nth-child(2){
+    width: 770px;
+    height: 110px;
+    padding-left: 20px;
+    margin-top: 10px;
+    display:flex;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>a{
+    display: block;
+    width: 135px;
+    height: 35px;
+    line-height: 35px;
+    overflow: hidden;
+    margin: 135px auto 0;
+    text-align: center;
+    background-color: #c40000;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #FFF
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:first-child div span,#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:nth-child(2) div span{
+    display: block;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: #000;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:first-child div p,#detailsAll #details_end .details_end_middle>div .details-service>div:first-child>div:nth-child(2) div p{
+    display: block;
+    line-height: 21px;
+    font-family: "microsoft yahei";
+    font-size: 12px;
+    color: #666;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:first-child em{
+  font-size: 12px;
+  color: #c40000;
+  font-weight: 700;
+}
+/* .details-service  2 */
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(2){
+  width:790px;
+  height: 1000px;
+  background-color: #fafafa;
+  padding-top: 15px;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(2)>ul{
+  width: 750px;
+  height: 960px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(2)>ul>li{
+  height: 220px;
+  border: 1px solid rgba(237,237,237);
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(2)>ul>li>div{
+    width: 220px;
+    text-align: center;
+    line-height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    position: relative;
+    left: 0;
+    bottom: 20px;
+}
+/* .details-service  3 */
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(3){
+    width: 790px;
+    height: 211px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffe5;
+    border: 1px solid #ffcc7f
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(3)>dl{
+    padding-left: 68px;
+    line-height: 2;
+    font-size: 12px;
+    color: #404040;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(3)>dl>dt{
+    display: inline;
+    float: left;
+    width: 68px;
+    margin-left: -68px;
+    font-weight: 700;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(3)>dl:first-child{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffe8ca;
+}
 </style>
-
-<style>
 
 /* 组件样式 */
 
-
+<style>
 /* 套餐  setMeal */
 #detailsAll #setMeal .is-active{
   color: #ff0036;
@@ -1381,6 +1794,24 @@ export default {
   margin-left: 15px;
 }
 
+/* #detailsAll #details_end .details_end_middle */
+#detailsAll #details_end .details_end_middle .el-tabs--border-card>.el-tabs__header{
+  background-color: #fff;
+  line-height: 48px;
+}
+#detailsAll #details_end .details_end_middle .el-tabs--border-card>.el-tabs__header .el-tabs__item{
+  color: #333333;
+  font-size: 12px;
+}
+#detailsAll #details_end .details_end_middle .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{
+  font-size:14px; 
+  color: #ff0036;
+  font-weight: 700;
+}
+#detailsAll #details_end .details_end_middle .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover{
+  color: #ff0036;
+}
+#detailsAll #details_end .details_end_middle .el-tabs--border-card>.el-tabs__content{
+  padding: 0;
+}
 </style>
-
-
