@@ -1,7 +1,7 @@
 <template>
   <div id="detailsAll">
     <div id="details">
-      <hr />
+      <hr/>
       <div>
         <div class="magnifyingGlass">
           <div class="small_img">
@@ -436,8 +436,10 @@
                   <div>
                     <ul>
                       <li v-for="(p,i) of side_img_arr" :key="i">
-                        <img :src="p.url" style="width:220px;height:220px;">
-                        <div>{{p.price.toFixed(2)}}</div>
+                        <router-link to="">
+                          <img :src="p.url" style="width:220px;height:220px;">
+                          <div>{{p.price.toFixed(2)}}</div>  
+                        </router-link>
                       </li>
                     </ul>
                   </div>
@@ -1727,7 +1729,11 @@ export default {
   height: 220px;
   border: 1px solid rgba(237,237,237);
 }
-#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(2)>ul>li>div{
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(2)>ul>li>a{
+  color: #212529;
+  text-decoration: none;
+}
+#detailsAll #details_end .details_end_middle>div .details-service>div:nth-child(2)>ul>li>a>div{
     width: 220px;
     text-align: center;
     line-height: 20px;
