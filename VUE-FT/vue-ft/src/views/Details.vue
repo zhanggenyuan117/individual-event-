@@ -349,6 +349,45 @@
               <a href="javascript:;"></a>
             </div>
           </div>
+          <!-- 5 -->
+          <div>
+            <div><span>宝贝分类</span></div>
+            <div>
+              <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div>
+            <div><span>宝贝排行榜</span></div>
+            <div>
+              <div><span>销售量</span><span>收藏数</span></div>
+              <ul v-if="details_end_left_two_6_bool">
+                <li v-for="(p,i) of setMealSecondDiv_ul_1" :key="i">
+                  <div>
+                    <img :src="p.url" alt="" style="width:42px;height:42px;">
+                  </div>
+                  <div>
+                    <p>2019年新款科技布现</p>
+                    <p>{{`¥${p.price.toFixed(2)}`}}</p>
+                    <p>已售17780件</p>
+                  </div>
+                </li>
+              </ul>
+              <ul v-else>
+               <li v-for="(p,i) of setMealSecondDiv_ul_1" :key="i">
+                  <div>
+                    <img :src="p.url" alt="" style="width:42px;height:42px;">
+                  </div>
+                  <div>
+                    <p>2019年新款科技布现</p>
+                    <p>{{`¥${p.price.toFixed(2)}`}}</p>
+                    <p>已售17780件</p>
+                  </div>
+                </li>
+              </ul>
+              <div>查看更多宝贝</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="details_end_middle">
@@ -483,6 +522,32 @@
 export default {
   data() {
     return {
+      details_end_left_two_6_bool:true,
+      data: [
+        {
+          label: '客厅系列',
+          children: [{label: '现代沙发'}, {label: '北欧沙发'},{label: '真皮沙发'},{label: '茶几'},{label: '边几'},{ label: '鞋柜'},{label: '电视柜'}, { label: '斗柜'}]
+        },
+        {
+          label: '餐厅系列',
+          children: [{label: '餐桌'}, {label: '餐椅'},{label: '餐边柜'},{label: '酒柜'}]
+        },
+        {
+          label: '卧室系列',
+          children: [{label: '真皮床'}, {label: '布艺床'},{label: '实木床'},{label: '板式床'},{label: '床垫'},{ label: '衣柜'},{label: '梳妆台'}]
+        },
+        {
+          label: '烤漆系列'
+        },
+        {
+          label: '书房系列',
+          children: [{label: '电脑桌'}]
+        }
+        ],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        },
       details_card_div_4:[
         {url:require("../assets/details/detail_img/one.jpg")},
         {url:require("../assets/details/detail_img/A1.jpg")},
@@ -622,6 +687,9 @@ export default {
     };
   },
   methods: {
+    handleNodeClick(data) {
+        console.log(data);
+    },
     handleClick(tab, event) {
         // console.log(tab, event);
     },
@@ -1478,6 +1546,92 @@ export default {
 #detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(4)>div>a:nth-of-type(2){
   background: url(//gdp.alicdn.com/imgextra/i4/3417036972/O1CN01qGsbPq21NDvohQbDi_!!3417036972.jpg) 50% 50% no-repeat;
 }
+/* details-left  第五个div */
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5){
+  width:190px;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)>div:first-child{
+    height: 33px;
+    line-height: 33px;
+    padding-top: 0px;
+    border-radius: 0;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)>div:first-child,#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:first-child{
+  border: 1px solid #eeeeee;
+  background-color:#f9f9f9;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)>div:first-child span,#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:first-child span{
+    margin-left: 8px;
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)>div:nth-child(2){
+  border: 1px solid #eeeeee;
+}
+/* details-left  第六个div */
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6){
+  width: 190px;
+  height: 511px;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2){
+  border: 1px solid #eeeeee;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>div:first-of-type{
+    width: 190px;
+    height: 28px;
+    border-bottom: 1px solid #fff;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>div:first-of-type>span{
+    display: inline-block;
+    width: 94px;
+    height: 28px;
+    line-height: 28px;
+    background-color: #E1E1E1;
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+    cursor: pointer;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>div:first-of-type>span:hover{
+  background-color: #ffffff;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>ul{
+  width: 188px;
+  height: 320px;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>ul>li{
+    height: 81px;
+    padding: 15px 0 4px;
+    border-bottom: 1px solid #ede5e3;
+    margin: 5px 10px;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>ul>li>div:first-child{
+    float: left;
+    font-size: 0;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>ul>li>div:nth-child(2){
+  margin-left: 55px;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>ul>li>div:nth-child(2)>p{
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(6)>div:nth-child(2)>div:nth-of-type(2){
+    height: 42px;
+    width: 188px;
+    line-height: 42px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666666;
+}
+
 /* 详情最后 details_end  右侧div*/
 #detailsAll #details_end .details_end_right{
   width: 200px;
@@ -1812,5 +1966,15 @@ export default {
 }
 #detailsAll #details_end .details_end_middle .el-tabs--border-card>.el-tabs__content{
   padding: 0;
+}
+/* #detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)  第五个div */
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)>div:nth-child(2) .el-tree-node__label{
+  font-size: 12px;
+  color: #7e7e7e;
+  line-height: 32px;
+  font-weight: 600;
+}
+#detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)>div:nth-child(2) .el-tree-node.is-expanded>.el-tree-node__children{
+  border-bottom: 1px solid #eeeeee;
 }
 </style>
