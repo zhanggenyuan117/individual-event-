@@ -438,7 +438,7 @@
                       <li v-for="(p,i) of side_img_arr" :key="i">
                         <router-link to="">
                           <img :src="p.url" style="width:220px;height:220px;">
-                          <div>{{p.price.toFixed(2)}}</div>  
+                          <div>{{`¥${p.price.toFixed(2)}`}}</div>  
                         </router-link>
                       </li>
                     </ul>
@@ -470,7 +470,7 @@
           <ul>
             <li v-for="(p,i) of side_img_arr" :key="i">
               <img :src="p.url" style="width:140px;height:140px;">
-              <div>{{p.price.toFixed(2)}}</div>
+              <div>{{`¥${p.price.toFixed(2)}`}}</div>
             </li>
           </ul>
         </div>
