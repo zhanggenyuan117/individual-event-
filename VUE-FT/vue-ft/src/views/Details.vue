@@ -688,7 +688,7 @@ export default {
   },
   methods: {
     handleNodeClick(data) {
-        console.log(data);
+        // console.log(data);
     },
     handleClick(tab, event) {
         // console.log(tab, event);
