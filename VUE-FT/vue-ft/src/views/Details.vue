@@ -628,13 +628,6 @@ export default {
     imgClickHandler(index) {
       this.small_img_i = index;
     },
-    // changei(e){
-    //   console.log(e.target)
-    //   if(e.target.nodeName=="IMG"){
-
-    //     this.small_img_i=e.target.dataset.index;
-    //   }
-    // },
     prev() {
       if (this.i > 0) {
         this.i--;
