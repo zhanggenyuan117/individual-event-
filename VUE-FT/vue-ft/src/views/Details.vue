@@ -30,7 +30,7 @@
                   :key="index"
                   :src="p"
                   style="width:60px;height:60px;float:left;margin:0 3px;margin-top:10px;"
-                  @click="imgClickHandler(index)"
+                  @mouseenter="imgClickHandler(index)"
                 />
               </div>
               <!-- <img src="../assets/details/small_img/right.png" alt /> -->
