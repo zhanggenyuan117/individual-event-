@@ -442,7 +442,65 @@
                   </div>
                 </div>
               </el-tab-pane>
-              <el-tab-pane label="累计评价">配置管理</el-tab-pane>
+              <el-tab-pane label="累计评价">
+                <div class="details-evaluate">
+                  <!-- 1 -->
+                  <div>
+                    <div>
+                      <h4>与描述相符</h4>
+                      <strong>4.7</strong>
+                      <span></span>
+                    </div>
+                    <div>
+                        <div>
+                          <span>大家都写到</span>
+                        </div>
+                        <div>
+                          <span v-for="(item,i) of details_evaluate_secondDiv" :key="i">
+                            <a href="javascript:;">{{item}}</a>
+                          </span>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- 2 -->
+                  <div>
+                    <span>
+                      <template>
+                        <el-radio v-model="radio" label="1">全部</el-radio>
+                        <el-radio v-model="radio" label="2">追评(1278)</el-radio>
+                        <el-radio v-model="radio" label="3">图片(4462)</el-radio>
+                      </template>
+                    </span>
+                    <span></span>
+                  </div>
+                  <!-- 3 -->
+                  <div v-for="i of 10" :key="i" style="width: 790px;height: 167px;display: flex;">
+                    <!-- 1 -->
+                    <div style="width: 508px;height: 167px;padding: 16px 7px;border-bottom: 1px solid #e3e3e3;">
+                      <!-- 1 -->
+                      <div style="width: 494px;height: 117px;">
+                        <div style="font-size: 12px;color:#333333;">
+                          沙发七件套很满意。一直心里很担心颜色方面。担心大件物体还有运输过程是否有磕碰问题。12月23下的单1月5号送达。收到货安装好一切顾虑都是多余的了。真心推荐大家值得购买。这价格这质量实体店没法比。
+                        </div>
+                        <div style="width: 494px;height: 40px;margin: 10px 0;">
+                          <img v-for="(p,i) of setMealSecondDiv_ul_1" :key="i" :src=p.url alt="" style="width:40px;height:40px;float:left;margin-left:5px;">
+                        </div>
+                      </div>
+                      <!-- 2 -->
+                      <div style="width: 494px;height: 18px;color: #ccc;font-size: 12px;">01.07</div>
+                    </div>
+                    <!-- 2 -->
+                    <div style="width: 149px;height: 167px;color: #999;padding: 16px 7px;border-bottom: 1px solid #e3e3e3;">
+                      <p style="font-size: 12px;color: #999999;margin-bottom: 0;margin-top:11px; ">颜色分类：七件套(送4小凳子)</p>
+                      <p style="font-size: 12px;color: #999999;margin-bottom: 0;margin-top:11px; ">几人坐：【加强型乳胶款】(免洗面料+加强型松木框架)选1-15号色</p>
+                    </div>
+                    <!-- 3 -->
+                    <div>
+                      <span style="font-size: 12px;color: #404040;line-height: 167px;margin-left: 45px;">****(匿名)</span>
+                    </div>
+                  </div>
+                </div>
+              </el-tab-pane>
               <el-tab-pane label="家装服务详情">
                 <div class="details-service">
                   <!-- 1 -->
@@ -522,6 +580,8 @@
 export default {
   data() {
     return {
+      radio: '1',
+      details_evaluate_secondDiv:["质量不错(608)","服务态度好(575)","快递不错(275)","实惠(186)","性价比高(55)","没有色差(39)","质量一般(55)"],
       details_end_left_two_6_bool:true,
       data: [
         {
@@ -1916,6 +1976,138 @@ export default {
     padding-bottom: 10px;
     border-bottom: 1px solid #ffe8ca;
 }
+/* 累计评价模块 */
+#detailsAll #details_end .details_end_middle>div .details-evaluate{
+  width: 790px;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child{
+    width: 790px;
+    height: 92px;
+    border: 1px solid #c8c8c8;
+    padding: 10px 0;
+    display: flex;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:first-child{
+    width: 115px;
+    height: 63px;
+    padding: 0 20px;
+    border-right: 1px dotted #ddd;
+    text-align: center;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:first-child>h4{
+  font-size: 12px;
+  color:#404040;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:first-child>strong{
+    color: #f60;
+    font-family: arial;
+    font-size: 32px;
+    line-height: 32px;
+    margin: 0 2px;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:first-child>span{
+    background: url(../assets/details/color/pingfen.png) 0 -15px no-repeat;
+    display: block;
+    width: 60px;
+    height: 12px;
+    overflow: hidden;
+    margin-left: 7px;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:nth-child(2){
+  width: 630px;
+  height: 70px;
+  display: flex;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:nth-child(2)>div:first-child{
+    color: #ccc;
+    width: 16px;
+    height: 61px;
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 12px;
+    padding: 0 40px 0 25px;
+    background: url(../assets/details/color/dakuohao.png) 45px 4px no-repeat;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:nth-child(2)>div:nth-child(2){
+  width: 555px;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:nth-child(2)>div:nth-child(2)>span{
+    float: left;
+    height: 22px;
+    margin: 7px 6px 6px;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:first-child>div:nth-child(2)>div:nth-child(2)>span>a{
+    font-size: 12px;
+    position: relative;
+    float: left;
+    border-radius: 2px;
+    line-height: 18px;
+    padding: 1px 10px;
+    background: #fff;
+    box-shadow: 2px 2px 1px #f2f2f2;
+    color: #ff0036;
+    border:1px solid #ffd7dd;
+    white-space: nowrap;
+    text-decoration: none;
+}
+/* 2 */
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(2){
+    background: #EFEFEF;
+    border: 1px solid #c8c8c8;
+    height: 36px;
+    line-height: 24px;
+    padding: 5px 10px;
+}
+/* 3 */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3){
+  width: 790px;
+  height: 167px;
+  display: flex;
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:first-child{
+  width: 508px;
+  height: 167px;
+  padding: 16px 7px;
+  border-bottom: 1px solid #e3e3e3;
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:first-child>div:first-child{
+  width: 494px;
+  height: 117px;
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:first-child>div:nth-child(2){
+  width: 494px;
+  height: 18px;
+  color: #ccc;
+  font-size: 12px;
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:first-child>div:first-child>div:first-child{
+  font-size: 12px;
+  color:#333333;
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:first-child>div:first-child>div:nth-child(2){
+  width: 494px;
+  height: 40px;
+  margin: 10px 0;
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:nth-child(2){
+  width: 149px;
+  height: 167px;
+  color: #999;
+  padding: 16px 7px;
+  border-bottom: 1px solid #e3e3e3;
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:nth-child(2)>p{
+  font-size: 12px;
+  color: #999999;
+  margin-bottom: 0;
+  margin-top:11px; 
+} */
+/* #detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(3)>div:nth-child(3)>span{
+  font-size: 12px;
+  color: #404040;
+  line-height: 167px;
+  margin-left: 45px;
+} */
 </style>
 
 /* 组件样式 */
@@ -1976,5 +2168,14 @@ export default {
 }
 #detailsAll #details_end .details_end_left .details_end_left_two>div:nth-child(5)>div:nth-child(2) .el-tree-node.is-expanded>.el-tree-node__children{
   border-bottom: 1px solid #eeeeee;
+}
+/* 累计评价 */
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(2) .el-radio__label{
+  font-size: 12px;
+  color:#404040;
+}
+#detailsAll #details_end .details_end_middle>div .details-evaluate>div:nth-child(2)>span:first-of-type .el-radio__input.is-checked .el-radio__inner{
+    border-color: #ccc;
+    background: #ccc;
 }
 </style>
