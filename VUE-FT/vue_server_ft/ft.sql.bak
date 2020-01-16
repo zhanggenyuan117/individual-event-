@@ -58,7 +58,7 @@ CREATE TABLE ft_user(
   user_name VARCHAR(32),
   sex INT
 );
-INSERT INTO ft_user VALUES(null,"tom","123456","834390901@qq.com","18637259578","images/avatar/1.jpg","张根源","1");
+INSERT INTO ft_user VALUES("1","tom","123456","834390901@qq.com","18637259578","images/avatar/1.jpg","张根源","1");
 
 
 

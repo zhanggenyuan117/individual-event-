@@ -91,7 +91,7 @@ var u=req.query.uname;
   }
   pool.query(sql,[u],(err,result)=>{
 		if(err) throw err;
-		console.log(result[0].uid)
+		console.log(result.uid)
 	})
   //5:将服务器返回结果发送脚手架
   //6:

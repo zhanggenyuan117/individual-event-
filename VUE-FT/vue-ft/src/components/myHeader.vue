@@ -88,7 +88,10 @@ export default {
     },
     methods:{
         login(){
-            this.axios.get("/login1").then(res=>{
+            var u=this.uname;
+            var obj={uname:u};
+            this.axios.get("/login1",{params:obj}).then(res=>{
+                console.log(res);
                 if(res.data.code==1){
                     this.affirm=false;
                 }
@@ -102,11 +105,6 @@ export default {
     }
 }
 </script>
-
-
-
-
-
 
 <style scoped>
 header{
