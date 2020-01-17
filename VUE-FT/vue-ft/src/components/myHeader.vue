@@ -92,10 +92,10 @@ export default {
             var obj={uname:u};
             this.axios.get("/login1",{params:obj}).then(res=>{
                 if(res.data.code==1){
+                    console.log(res)
                     this.affirm=false;
                     var un=res.request.responseURL;
                     var arr=un.split("=")[1];
-                    this.uuu="arr";
                 }
             }).catch(err=>{
                 console.log(err)
