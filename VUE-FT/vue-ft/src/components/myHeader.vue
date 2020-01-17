@@ -10,7 +10,7 @@
             </div>
             <div v-else class="affirm">
                 <a>欢迎来到风尚家居</a>
-                <router-link to="">{{uname}}</router-link>
+                <router-link to="">{{uuu}}</router-link>
                 <router-link to="">注销</router-link>
             </div>
         </div>
@@ -83,7 +83,7 @@ export default {
     data(){
         return {
             affirm:true,
-            uname:"tom"
+            uuu:"tom"
         }
     },
     methods:{
@@ -91,9 +91,11 @@ export default {
             var u=this.uname;
             var obj={uname:u};
             this.axios.get("/login1",{params:obj}).then(res=>{
-                console.log(res);
                 if(res.data.code==1){
                     this.affirm=false;
+                    var un=res.request.responseURL;
+                    var arr=un.split("=")[1];
+                    this.uuu="arr";
                 }
             }).catch(err=>{
                 console.log(err)

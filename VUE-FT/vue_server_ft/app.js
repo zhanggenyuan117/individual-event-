@@ -81,7 +81,7 @@ server.get("/login1",(req,res)=>{
 var u=req.query.uname;
   //1:获取用户登录凭证uid
   var uid = req.session.uid;
-  var sql="SELECT uid FROM ft_user WHERE uname=?";
+  var sql="SELECT uname FROM ft_user WHERE uid";
   //2:没有uid 请登录
   if(!uid){
     res.send({code:-2,msg:"请登录",data:[]});
@@ -91,7 +91,8 @@ var u=req.query.uname;
   }
   pool.query(sql,[u],(err,result)=>{
 		if(err) throw err;
-		console.log(result[0].uid)
+		console.log(result)
+		
 	})
   //5:将服务器返回结果发送脚手架
   //6:
