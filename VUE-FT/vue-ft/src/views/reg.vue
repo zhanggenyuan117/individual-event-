@@ -66,13 +66,11 @@ export default {
          open2() {
             this.$alert('验证码输入错误', '警告', {
             confirmButtonText: '确定',
-            
             });
         },
         open1() {
             this.$alert('两次密码输入不一致', '警告', {
             confirmButtonText: '确定',
-            
             });
         },
       open() {
@@ -101,8 +99,10 @@ export default {
             var obj={uname:u,upwd:p,email:e,phone:phone};
             this.axios.get("/reg",{params:obj})
             .then(res=>{
+              let xingming = res.config.params.uname;
                 if(res.data=="1"){
                     this.open();
+                    sessionStorage.setItem('uname',xingming)
                 }
             })
             .catch(err=>{

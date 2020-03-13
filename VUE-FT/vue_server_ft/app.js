@@ -55,7 +55,7 @@ server.get("/login",(req,res)=>{
  pool.query(sql,[u,p],(err,result)=>{
     if(err)throw err;
     if(result.length==0){
-     res.send({code:-1,msg:"用户名或密码有误"});
+     res.send({code:-1,msg:"用户名或密码有误",uname:u});
     }else{
       /*
         将当前登录用户id保存在session对象中,作为登录凭证

@@ -43,7 +43,10 @@ export default {
                     this.axios.get(url,{params:obj}).then(result=>{
                         if(result.data.code==1){
                             this.$router.push('/');
-                            location.reload();
+                            console.log(result)
+                            sessionStorage.setItem('uname',this.uname)
+                            console.log(sessionStorage.getItem('uname'))
+                            // location.reload();
                         }else{
                             alert("用户名或密码错误")
                         }

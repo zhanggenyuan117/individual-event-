@@ -3,15 +3,15 @@
     <header>
         <div id="header_parent">
         <div id="header">
-            <div v-if="affirm" class="affirm">
+            <div v-if="!uname" class="affirm">
                 <a>欢迎来到风尚家居</a>
                 <router-link to="/login">请登录</router-link>
                 <router-link to="/reg">免费注册</router-link>
             </div>
             <div v-else class="affirm">
                 <a>欢迎来到风尚家居</a>
-                <router-link to="">{{uuu}}</router-link>
-                <router-link to="">注销</router-link>
+                <a>{{uname}}</a>
+                <a @click="del">注销</a>
             </div>
         </div>
         <ul>
@@ -82,28 +82,42 @@ import { cpus } from 'os';
 export default {
     data(){
         return {
-            affirm:true,
-            uuu:"tom"
+            uname:sessionStorage.getItem('uname')
         }
     },
     methods:{
-        login(){
-            var u=this.uname;
-            var obj={uname:u};
-            this.axios.get("/login1",{params:obj}).then(res=>{
-                if(res.data.code==1){
-                    console.log(res)
-                    this.affirm=false;
-                    var un=res.request.responseURL;
-                    var arr=un.split("=")[1];
-                }
-            }).catch(err=>{
-                console.log(err)
-            })
+        del(){
+            sessionStorage.clear();
+            this.uname=false;
         }
+        // isLogin(){
+        //     this.uuu=sessionStorage.getItem('uname')
+        // }
+        // login(){
+        //     var u=this.uname;
+        //     var obj={uname:u};
+        //     this.axios.get("/login1",{params:obj}).then(res=>{
+        //         if(res.data.code==1){
+        //             console.log(res)
+        //             var uname=res.request.responseURL;
+        //             var arr=un.split("=")[1];
+        //         }
+        //     }).catch(err=>{
+        //         console.log(err)
+        //     })
+        // }
     },
     created(){
-        this.login();
+        // this.login();
+        // this.isLogin();
+    },
+    watch:{
+        $route(to,from){
+            console.log(to);
+            console.log(from);
+            this.uname = sessionStorage.getItem('uname');
+            console.log(this.uname)
+        }
     }
 }
 </script>
